@@ -1,13 +1,40 @@
-.page-section { /* new class to use it on HTML */
+.page-section {
+    /* new class to use it on HTML */
     padding: 1.2rem 0;
 
     @mixin atMedium {
-        padding :4.5rem 0;
+        padding: 4.5rem 0;
     }
-    
+
 
     &--blue {
         background-color: $mainBlue;
         color: #FFF;
+    }
+
+    &--no-b-padding-util-medium {
+        padding-bottom: 0;
+
+        @mixin atMedium {
+            padding: 4.5rem;
+        }
+    }
+
+    &--no-b-padding-util-large {
+        padding-bottom: 0;
+
+        @mixin atLarge {
+            padding: 4.5rem;
+        }
+    }
+
+    &--testimonials {
+        background-color: #e0e6ef;
+
+        @mixin atLarge {
+            background: url('assets/images/testimonials-bg.jpg') top center no-repeat;
+            background-size: cover;
+        }
+
     }
 }
