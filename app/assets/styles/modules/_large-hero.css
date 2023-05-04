@@ -1,17 +1,23 @@
 .large-hero {
 	border-bottom: 10px solid $mainBlue;
-	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+
 
 	&__image {
-		display: block;
+		grid-column: 1;
+		grid-row: 1;
+
+		img {
+			display: block;
+		}
 	}
 
 	&__text-content {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		left: 0;
-		width: 100%;
+		align-self: center;
+		grid-column: 1;
+		grid-row: 1;
+		padding-top: 60px;
 		text-align: center;
 	}
 
@@ -19,17 +25,20 @@
 		font-weight: 300;
 		color: $mainBlue;
 		margin: 0;
-		font-size: 2.4rem; /*pump the size from 1.1 */
+		font-size: 2.4rem;
+		/*pump the size from 1.1 */
 
 		@mixin atSmall {
-			font-size: 4.8rem;        /* change the font size from 2 to 4.8 and delete the medium and large mixin */
+			font-size: 4.8rem;
+			/* change the font size from 2 to 4.8 and delete the medium and large mixin */
 		}
 	}
 
 	&__subtitle {
 		font-weight: 300;
 		color: $mainBlue;
-		font-size: 1.5rem; /* changed the size from 1.1 to 1.5 */
+		font-size: 1.5rem;
+		/* changed the size from 1.1 to 1.5 */
 		margin: 0;
 
 		@mixin atSmall {
@@ -39,7 +48,8 @@
 
 	&__des {
 		color: #fff;
-		font-size: 1.1rem; /* changed from 1.875 after we set the mixin */
+		font-size: 1.1rem;
+		/* changed from 1.875 after we set the mixin */
 		font-weight: 100;
 		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 		max-width: 30rem;
@@ -47,7 +57,8 @@
 		margin-right: auto;
 
 
-		@mixin atSmall {    /* once a browser window is large enough to considerd small */
+		@mixin atSmall {
+			/* once a browser window is large enough to considerd small */
 			font-size: 1.875rem;
 		}
 	}
